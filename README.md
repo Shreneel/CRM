@@ -4,12 +4,12 @@ CRM (CUSTOMER RELATIONSHIP MANAGEMENT) is a widely implemented strategy for mana
 Programmed a CRM Software offering large or small scale businesses with ability to create, assign, market, and manage requests with multiple logins for several employee positions. Implemented a MySQL database to support backend structure of the application and constructed the GUI using Java Swing.
 
 ### Objective of proposed system are:-
-• To develop a good relation between the customer and the organization. \n
-• Improve the efficiency of the business. \n
-• Attracting the present and new customers. \n
-• Develop better communication channels and increase customer satisfaction. \n
+• To develop a good relation between the customer and the organization. 
+• Improve the efficiency of the business. 
+• Attracting the present and new customers. 
+• Develop better communication channels and increase customer satisfaction. 
 
 ### Software Requirement (Minimum):
-1)Operating System- Windows 7 \n
-2)Language - JAVA \n
+1)Operating System- Windows 7 
+2)Language - JAVA 
 3)IDE-NetBeans
