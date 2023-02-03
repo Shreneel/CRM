@@ -1,0 +1,79 @@
+ show tables;
+
++--------------------+
+| Tables_in_sami_crm |
++--------------------+
+| acc_dept           |
+| add_client         |
+| add_emp            |
+| add_proj           |
+| eco_history        |
+| hr_dept            |
+| oper_dept          |
++--------------------+
+
+1. acc_dept :
+
+ create table acc_dept(
+ client_id int(11),
+ foreign key (client_id) references add_client (client_id) 
+ ON DELETE CASCADE ON UPDATE CASCADE,
+ proj_id int 
+ foreign key (proj_id) references add_proj (proj_id)
+ ON DELETE CASCADE ON UPDATE CASCADE, 
+ budget double(10,2), 
+ billability double(10,2),
+ rem_amt double(10,2));
+
+2. hr_dept :
+
+create table hr_dept(
+client_id int(11), 
+foreign key (client_id) references add_client (client_id)
+ON DELETE CASCADE ON UPDATE CASCADE, 
+cli_background varchar(50),
+history varchar(50), 
+feedback varchar(50), 
+comments varchar(100));
+
+3. add_proj :
+
+   create table add_proj(
+proj_id int(11) NOT NULL AUTO_INCREMENT primary key,
+ proj_name varchar(40), 
+start_date varchar(20), 
+end_date varchar(20), 
+technology varchar(20), 
+proj_desc varchar(50), 
+client_id int(11),
+ foreign key (client_id) references add_client (client_id)
+ ON DELETE CASCADE ON UPDATE CASCADE);
+
+4. oper_dept :
+
+   create table oper_dept(
+client_id int(11), 
+foreign key (client_id) references add_client(client_id) 
+ON DELETE CASCADE, 
+status_project varchar(100), 
+history varchar(100), 
+feedback varchar (100),
+ proj_id int(11), 
+foreign key (proj_id) references add_proj (proj_id) 
+ON DELETE CASCADE ON UPDATE CASCADE);
+
+5. eco_history :
+   
+   create table eco_history(
+client_id int(11),
+ foreign key (client_id) references add_client (client_id) 
+ON DELETE CASCADE  ON UPDATE CASCADE, 
+proj_id int(11),
+ foreign key (proj_id) references add_proj (proj_id) 
+ON DELETE CASCADE ON UPDATE CASCADE, 
+dat varchar(20),
+ time varchar(10), 
+amt double(10,2),
+ mode_pay varchar(20), 
+title varchar(50));
+
